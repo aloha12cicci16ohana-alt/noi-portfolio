@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOI | Web Design & Creative Strategy</title>
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- JS（最後に読み込み。deferでDOM後に実行） -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- ローディング画面 -->
+  <div id="loading-screen">
+  <video id="loadingVideo" src="assets/video/loading.mp4" autoplay muted playsinline></video>
+</div>
+
+  <!-- 背景レイヤー -->
+  <div class="scene">
+    <div class="scene-inner">
+      <div class="blob blob-lime-1"></div>
+      <div class="blob blob-lime-2"></div>
+      <div class="blob blob-orange-1"></div>
+      <div class="blob blob-orange-2"></div>
+    </div>
+
+    <div class="noise-overlay">
+      <video src="assets/video/noise.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <!-- 縦書き無限ループテキスト -->
+  <div class="side-text-container left">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+  <div class="side-text-container right">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- NOIロゴ -->
+  <a href="#fv" class="logo">NOI</a>
+
+  <!-- PC用ナビゲーションメニュー -->
+  <header class="floating-nav">
+    <nav>
+      <ul>
+        <li><a href="#fv">TOP</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="#service">SERVICE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ▼ スマホ用 ヘッダーバー（すりガラス追従） ▼ -->
+  <div class="mobile-header-bar">
+    <a href="#fv" class="logo">NOI</a>
+    <div class="mobile-header-right">
+      <!-- MENUボタン -->
+      <div class="mobile-menu-text-btn" id="mobileMenuBtn">ME<br>NU</div>
+      <!-- バツマーク（メニューオープン時のみ表示） -->
+      <div class="mobile-close-x" id="mobileCloseBtn">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ▼ スマホ用 フルスクリーンメニュー（半円展開） ▼ -->
+  <div class="mobile-fullscreen-menu" id="mobileFullscreenMenu">
+    <div class="menu-bg-circle"></div>
+    <div class="menu-content-inner">
+      <nav class="mobile-nav-links">
+        <ul>
+          <li><a href="#fv">Top</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-sns-links">
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="Instagram"></a>
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="X"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- メインカラム -->
+  <main class="phone-column">
+
+    <!-- FV -->
+    <section id="fv" class="section-fv">
+      <div class="fv-main-text">
+        <div class="regular">Make</div>
+        <div class="black">Noise.</div>
+        <div class="regular">Move</div>
+        <div class="black">Hearts.</div>
+      </div>
+      <div class="fv-sub-text">
+        誰かの記憶に引っかかる、<br />
+        違和感と想いをデザインする。
+      </div>
+      <div class="fv-strategy-wrapper">
+        <div class="strategy-decoration-blob"></div>
+        <div class="fv-strategy-text">
+          Web Design &<br />
+          Creative Strategy
+        </div>
+        
+        <!-- ▼ スマホ用 無限スクロールテキスト ▼ -->
+        <div class="fv-marquee-wrapper">
+          <div class="fv-marquee">
+            <span>Web Design & Creative Strategy / AI / Web Design & Creative Strategy / AI / Web Design & Creative Strategy / AI /&nbsp;</span>
+            <span aria-hidden="true">Web Design & Creative Strategy / AI / Web Design & Creative Strategy / AI / Web Design & Creative Strategy / AI /&nbsp;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="about-header">
+        <h2 class="about-title-large">About NOI</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+      <div class="about-text-content">
+        <p>
+          私たちは、思いや価値を”伝わる形”へと<br />
+          翻訳するクリエイティブパートナーです。<br />
+          デザイン、ことば、映像、そして構造。<br />
+          様々な手法を用いて、その人らしさや本質を丁寧に掬い上げ、心を動かす体験として形にします。<br />
+          ビジネスにも、人生にも「らしさ」が正しく伝わる世界をつくること。<br />
+          それが、NOIの仕事です。
+        </p>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section id="why">
+      <div class="why-header">
+        <h2 class="why-title-large">Why NOI?</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+      <div class="why-text-content">
+        <p>
+          1,NOIは、答えを先に出しません<br />
+          2,NOIは、感性だけで終わらせません<br />
+          3,NOIは、「らしさ」を一緒に作ります<br />
+          4,NOIは、結節点でありたい<br />
+          <br />
+          「つくる」だけ終わらせない。<br />
+          想いが、ちゃんと伝わるところまで。
+        </p>
+      </div>
+      <a href="about.html" class="view-all-btn"><span>VIEW ALL ABOUT</span></a>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works">
+      <div class="works-intro">
+        <div class="works-header">
+          <h2 class="works-title-large">Works</h2>
+          <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+        </div>
+        <div class="works-text-content">
+          <p>
+            これまで制作してきた作品事例です。<br />
+            WEBデザイン、WEBサイト、バナー、<br />
+            デジタルアートなど。
+          </p>
+        </div>
+      </div>
+
+      <!-- WORKSスクロール量確保用スペーサー (400vh分) -->
+      <div class="works-placeholder" aria-hidden="true"></div>
+    </section>
+
+    <!-- Service -->
+    <section id="service">
+      <div class="service-header">
+        <h2 class="service-title-large">Service</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+
+      <div class="service-text-content">
+        <div class="service-block">
+          <div class="service-icons">
+            <img src="./assets/images/ai.png" alt="Icon" />
+            <img src="./assets/images/ps.png" alt="Icon" />
+            <img src="./assets/images/figma.png" alt="Icon" />
+            <img src="./assets/images/procrearte.png" alt="Icon" />
+          </div>
+          <h3 class="service-block-title">Design</h3>
+          <p class="service-block-desc">
+            HPやLPデザインやバナーの制作、名刺やフライヤーの作成など、様々なデザインのご依頼も承っております。
+          </p>
+        </div>
+
+        <div class="service-block">
+          <div class="service-icons">
+            <img src="./assets/images/html.png" alt="Icon" />
+            <img src="./assets/images/css.png" alt="Icon" />
+            <img src="./assets/images/js.png" alt="Icon" />
+            <img src="./assets/images/wordpress.png" alt="Icon" />
+            <img src="./assets/images/studio.png" alt="Icon" />
+          </div>
+          <h3 class="service-block-title">ウェブサイト制作</h3>
+          <p class="service-block-desc">
+            コーポレートサイトやブランデキングサイト、ランディングページなど制作の依頼を承っております。
+          </p>
+        </div>
+
+        <div class="service-block">
+          <div class="service-icons">
+            <img src="./assets/images/pr.png" alt="Icon" />
+            <img src="./assets/images/ae.png" alt="Icon" />
+          </div>
+          <h3 class="service-block-title">動画制作</h3>
+          <p class="service-block-desc">
+            動画制作のご依頼も承っております。デザインやHP制作と一緒にお伺いすることも可能です。
+          </p>
+        </div>
+      </div>
+
+      <a href="service.html" class="view-all-btn"><span>VIEW ALL SERVICE</span></a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="contact-header">
+        <h2 class="contact-title-large">Contact</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+
+      <div class="contact-content-wrapper">
+        <div class="contact-text-content">
+          <p>
+            お仕事のご依頼・ご相談・外部パートナーとしてのお誘いなどお気軽にお問い合わせください。<br />
+            ご相談・お見積りは無料で承っております。<br />
+            通常土日を除く3営業日以内に内容を確認の上、メールにてご連絡させていただきます。
+          </p>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label>お名前 <span class="required">※</span></label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="form-group">
+            <label>フリガナ <span class="required">※</span></label>
+            <input type="text" name="kana" required />
+          </div>
+          <div class="form-group">
+            <label>メールアドレス <span class="required">※</span></label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" name="tel" />
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ内容 <span class="required">※</span></label>
+            <textarea rows="6" name="message" required></textarea>
+          </div>
+          <button type="submit" class="contact-submit-btn"><span>SEND MESSAGE</span></button>
+        </form>
+      </div>
+
+      <!-- Footer Entrance Animation -->
+      <div class="footer-animation-wrapper">
+        <div class="footer-anim-line"></div>
+        <a href="#fv" class="footer-anim-noi">NOI</a>
+        <div class="footer-anim-noise"><img src="assets/images/headder_moise.png" alt=""></div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-copy">© 2024 NOI. ALL RIGHTS RESERVED.</div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- WORKS ウィンドウ: phone-column の外に独立配置 (position:fixed) -->
+  <div class="works-window" id="works-window" aria-hidden="true">
+    <div class="works-slider-wrapper">
+      <!-- Row 1: Right -->
+      <div class="works-slider-row">
+        <div class="works-track scroll-right">
+          <div class="works-img-item"><img src="./assets/works/banner/ice_o1.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/ice_02.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/Instagram post - 44.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/Instagram post - 29.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/highbarger_squ.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/popbarger_squ.jpg" alt=""></div>
+          <!-- Duplicate -->
+          <div class="works-img-item"><img src="./assets/works/banner/ice_o1.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/ice_02.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/Instagram post - 44.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/Instagram post - 29.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/highbarger_squ.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/banner/popbarger_squ.jpg" alt=""></div>
+        </div>
+      </div>
+      <!-- Row 2: Left -->
+      <div class="works-slider-row">
+        <div class="works-track scroll-left">
+          <div class="works-img-item"><img src="./assets/works/web/kanemitsu_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/AitTOP.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/TRAD TOP.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/webdesign/cha_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/furisupe_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/webdesign/life_top.png" alt=""></div>
+          <!-- Duplicate -->
+          <div class="works-img-item"><img src="./assets/works/web/kanemitsu_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/AitTOP.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/TRAD TOP.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/webdesign/cha_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/web/furisupe_top.png" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/webdesign/life_top.png" alt=""></div>
+        </div>
+      </div>
+      <!-- Row 3: Right -->
+      <div class="works-slider-row">
+        <div class="works-track scroll-right">
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_01.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_02.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_03.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_04.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_08.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_06.jpg" alt=""></div>
+          <!-- Duplicate -->
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_01.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_02.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_03.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_04.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_08.jpg" alt=""></div>
+          <div class="works-img-item"><img src="./assets/works/desitalart/chum_06.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="works-overlay" id="works-overlay">
+      <h2 class="works-overlay-text">Works</h2>
+      <a href="works.html" class="works-view-btn"><span>VIEW ALL WORKS</span></a>
+    </div>
+  </div><!-- /works-window -->
+
+</body>
+</html>

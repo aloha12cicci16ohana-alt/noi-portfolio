@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOI | Web Design & Creative Strategy</title>
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- JS（最後に読み込み。deferでDOM後に実行） -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- 背景レイヤー -->
+  <div class="scene">
+    <div class="scene-inner">
+      <div class="blob blob-lime-1"></div>
+      <div class="blob blob-lime-2"></div>
+      <div class="blob blob-orange-1"></div>
+      <div class="blob blob-orange-2"></div>
+    </div>
+
+    <div class="noise-overlay">
+      <video src="assets/video/noise.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <!-- 縦書き無限ループテキスト -->
+  <div class="side-text-container left">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+  <div class="side-text-container right">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- NOIロゴ -->
+  <a href="#fv" class="logo">NOI</a>
+
+  <!-- ナビゲーションメニュー -->
+  <header class="floating-nav">
+    <nav>
+      <ul>
+        <li><a href="index.html#fv">TOP</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#works">WORKS</a></li>
+        <li><a href="index.html#service">SERVICE</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-header-bar">
+    <a href="index.html" class="logo">NOI</a>
+    <div class="mobile-header-right">
+      <div class="mobile-menu-text-btn" id="mobileMenuBtn">ME<br>NU</div>
+      <div class="mobile-close-x" id="mobileCloseBtn">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-fullscreen-menu" id="mobileFullscreenMenu">
+    <div class="menu-bg-circle"></div>
+    <div class="menu-content-inner">
+      <nav class="mobile-nav-links">
+        <ul>
+          <li><a href="index.html">Top</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-sns-links">
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="Instagram"></a>
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="X"></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- メインカラム -->
+  <main class="phone-column">
+
+    <!-- About -->
+    <section id="about">
+      <div class="about-header">
+        <h2 class="about-title-large">About NOI</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+      <div class="about-text-content">
+        <p>
+          私たちは、想いや価値を” 伝わる形”に変える<br />
+          クリエイティブパートナーです。<br />
+          デザイン、言葉、映像、AI。多彩な手段で「その人らしさ」を構造化し、<br />
+          様々な手法を用いて、その人らしさや本質を丁寧に掬い上げ、心を動かす体験として形にします。<br />
+          ビジネスと人生に、心躍る世界観を実装します。<br />
+        </p>
+
+        <!-- 3つの円のグラフィック -->
+        <div class="about-nodes-graphic">
+          <!-- 繋ぎの線 (SVGパーセント指定で枠に100%追従させる) -->
+          <svg class="nodes-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Node(中央上) から New(左下) へ -->
+            <line x1="50" y1="20" x2="16" y2="72" stroke="#cbfb07" stroke-width="3" />
+            <!-- Node(中央上) から Noise(右下) へ (yを72->85に変更して下げる) -->
+            <line x1="50" y1="20" x2="84" y2="85" stroke="#cbfb07" stroke-width="3" />
+            <!-- New(左下) から Noise(右下) へ (yを72->85に変更して下げる) -->
+            <line x1="16" y1="72" x2="84" y2="85" stroke="#cbfb07" stroke-width="3" />
+          </svg>
+
+          <!-- 円1: Node (上) -->
+          <div class="node-circle node-top">
+            <div class="node-title">Node</div>
+            <div class="node-sub">結節点</div>
+            <div class="node-desc">人と人、想いと社会を<br>つなぐ場所。</div>
+          </div>
+
+          <!-- 円2: New (左下) -->
+          <div class="node-circle node-left">
+            <div class="node-title">New</div>
+            <div class="node-sub">新しい</div>
+            <div class="node-desc">既存の枠にとらわれない<br>新しい価値の創造。</div>
+          </div>
+
+          <!-- 円3: Noise (右下) -->
+          <div class="node-circle node-right">
+            <div class="node-title">Noise</div>
+            <div class="node-sub">ノイズ</div>
+            <div class="node-desc">心を揺らし、記憶に残る<br>違和感と感動</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Greeting -->
+    <section id="greeting">
+      <div class="greeting-header">
+        <h2 class="greeting-title-large">Greeting</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+      <div class="greeting-text-content">
+        <p>
+          はじめまして。<br />
+          NOI 代表の CHUM（チャム） です。<br />
+          <br />
+          私はこれまで、<br />
+          WEBデザインによる企業のブランディングと<br />
+          ウェディングプロデュースによる人生の節目づくりという、<br />
+          一見異なる二つの領域を行き来しながら活動してきました。<br />
+          <br />
+          一見、別世界に見えるこの二つ。<br />
+          けれど私にとっては、どちらも同じ仕事です。<br />
+          <br />
+          それは、<br />
+          「まだ言葉になっていない想いを、かたちにすること」。<br />
+          <br />
+          人は、心の奥にある想いや願いを、<br />
+          自分の言葉でうまく説明できないことがあります。<br />
+          けれど、そこには必ず“伝えるべき本質”が眠っています。<br />
+          <br />
+          私は、デザイン・言葉・構造という手段を使って、<br />
+          その想いを丁寧にすくい上げ、<br />
+          「伝わるかたち」へと編み直します。<br />
+          <br />
+          私が大切にしているのは、<br />
+          「遊ぶように、真剣であること。」<br />
+          <br />
+          それは、軽さではなく“没頭”です。<br />
+          子どもが夢中で遊ぶように、<br />
+          対象の本質に深く入り込み、<br />
+          試し、壊し、組み直し、最適解を探し続ける。<br />
+          <br />
+          そのプロセスこそが、<br />
+          人の心を動かすクリエイティブを生むと信じています。
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Footer Entrance Animation -->
+      <div class="footer-animation-wrapper">
+        <div class="footer-anim-line"></div>
+        <div class="footer-glitch-text" data-text="Let's have fun making things with NOI !">Let's have fun making things with NOI !</div>
+        <a href="#fv" class="footer-anim-noi">NOI</a>
+        <div class="footer-anim-noise"><img src="assets/images/headder_moise.png" alt=""></div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-copy">© 2024 NOI. ALL RIGHTS RESERVED.</div>
+      </footer>
+    </section>
+  </main>
+
+</body>
+</html>

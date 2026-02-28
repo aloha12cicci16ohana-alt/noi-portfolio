@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOI | Service</title>
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- JS（最後に読み込み。deferでDOM後に実行） -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- 背景レイヤー -->
+  <div class="scene">
+    <div class="scene-inner">
+      <div class="blob blob-lime-1"></div>
+      <div class="blob blob-lime-2"></div>
+      <div class="blob blob-orange-1"></div>
+      <div class="blob blob-orange-2"></div>
+    </div>
+    <div class="noise-overlay">
+      <video src="assets/video/noise.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <!-- 縦書き無限ループテキスト -->
+  <div class="side-text-container left">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+  <div class="side-text-container right">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- NOIロゴ -->
+  <a href="index.html#fv" class="logo">NOI</a>
+
+  <!-- ナビゲーション -->
+  <header class="floating-nav">
+    <nav>
+      <ul>
+        <li><a href="index.html#fv">TOP</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="works.html">WORKS</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-header-bar">
+    <a href="index.html" class="logo">NOI</a>
+    <div class="mobile-header-right">
+      <div class="mobile-menu-text-btn" id="mobileMenuBtn">ME<br>NU</div>
+      <div class="mobile-close-x" id="mobileCloseBtn">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-fullscreen-menu" id="mobileFullscreenMenu">
+    <div class="menu-bg-circle"></div>
+    <div class="menu-content-inner">
+      <nav class="mobile-nav-links">
+        <ul>
+          <li><a href="index.html">Top</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-sns-links">
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="Instagram"></a>
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="X"></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- メインカラム -->
+  <main class="phone-column">
+
+    <!-- ===== Service + Flow ===== -->
+    <section id="service-page" class="service-page-section">
+
+      <!-- タイトル -->
+      <div class="service-page-title-row">
+        <div class="works-archive-header">
+          <h1 class="works-title-large">Service</h1>
+          <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+        </div>
+
+      </div>
+
+      <!-- Flow セクション -->
+      <div class="service-flow-section">
+        <h2 class="service-section-title">Flow</h2>
+
+        <div class="service-flow-diagram">
+
+          <!-- SVG接続線 -->
+          <svg class="flow-connectors" viewBox="0 0 340 650" preserveAspectRatio="none" aria-hidden="true">
+            <!-- Contact方面(98,93) → Share中心(280,228): フラットめのオレンジ斜め線 -->
+            <line x1="98" y1="93" x2="280" y2="228" stroke="#f6a91e" stroke-width="8"/>
+            <!-- Share(262,228) → Planning(78,228): ライム横線 -->
+            <line x1="262" y1="228" x2="78" y2="228" stroke="#cbfb07" stroke-width="8"/>
+            <!-- Planning(78,228) → Creative(170,388): ライム斜め線 -->
+            <line x1="78" y1="228" x2="170" y2="388" stroke="#cbfb07" stroke-width="8"/>
+            <!-- Creative(170,388) → Deliver(95,558): ライム左下 -->
+            <line x1="170" y1="388" x2="95" y2="558" stroke="#cbfb07" stroke-width="8"/>
+          </svg>
+
+          <!-- Contact（左寄り中央・元の位置） -->
+          <div class="flow-node flow-node--orange" style="top:-15px; left:20%; transform:translateX(-50%);">
+            <div class="flow-node-title">Contact</div>
+            <div class="flow-node-sub">お問い合わせ</div>
+            <div class="flow-node-desc">まずはお気軽にご連絡ください。ご要望をお聞きします。</div>
+          </div>
+
+          <!-- Planning（左、Contact+スペース分下） -->
+          <div class="flow-node flow-node--lime" style="top:150px; left:0;">
+            <div class="flow-node-title">Planning</div>
+            <div class="flow-node-sub">企画立案</div>
+            <div class="flow-node-desc">ヒアリングをもとに最適なプランを立案します。</div>
+          </div>
+
+          <!-- Share（右、Planningと同じ高さ） -->
+          <div class="flow-node flow-node--orange" style="top:150px; right:0;">
+            <div class="flow-node-title">Share</div>
+            <div class="flow-node-sub">情報共有シェア</div>
+            <div class="flow-node-desc">方向性・スケジュールを共有しフィードバックをいただきます。</div>
+          </div>
+
+          <!-- Creative（中央，間隔を広げる） -->
+          <div class="flow-node flow-node--lime" style="top:310px; left:50%; transform:translateX(-50%);">
+            <div class="flow-node-title">Creative</div>
+            <div class="flow-node-sub">デザイン制作</div>
+            <div class="flow-node-desc">実際のデザイン・制作を行います。修正を重ねながら仕上げます。</div>
+          </div>
+
+          <!-- Deliver（左下方, Creativeの左下） -->
+          <div class="flow-node flow-node--lime" style="top:480px; left:28%; transform:translateX(-50%);">
+            <div class="flow-node-title">Deliver</div>
+            <div class="flow-node-sub">納品完了</div>
+            <div class="flow-node-desc">最終確認の後、納品いたします。</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Price セクション -->
+      <div class="service-price-section">
+        <h2 class="service-section-title">Price</h2>
+
+        <div class="service-price-list">
+
+          <!-- Design -->
+          <div class="price-card">
+            <div class="price-card-header price-card-header--lime">Design</div>
+            <p class="price-card-desc">ラフ案からデザインのみ、または最終フィクスまでの全ステップのデザインのみをご依頼いただけます。</p>
+            <ul class="price-card-items">
+              <li><span class="price-label">バナー</span><span class="price-value">¥10,000〜</span></li>
+              <li><span class="price-label">サイトデザイン</span><span class="price-value">¥50,000〜</span></li>
+              <li><span class="price-label">LP・サイン</span><span class="price-value">¥40,000〜</span></li>
+              <li><span class="price-label">ブランディング</span><span class="price-value">¥50,000〜</span></li>
+            </ul>
+          </div>
+
+          <!-- ウェブサイト制作 -->
+          <div class="price-card">
+            <div class="price-card-header price-card-header--lime">ウェブサイト制作</div>
+            <p class="price-card-desc">コーポレートサイトからランディングページ、ショッピングページなど目的に合ったご提案いたします。</p>
+            <ul class="price-card-items">
+              <li><span class="price-label">企業サイト</span><span class="price-value">¥80,000〜</span></li>
+              <li><span class="price-label">サイトmst</span><span class="price-value">¥100,000〜</span></li>
+              <li><span class="price-label">キ・サイト構築</span><span class="price-value">¥100,000〜</span></li>
+            </ul>
+          </div>
+
+          <!-- 相談 -->
+          <div class="price-card">
+            <div class="price-card-header price-card-header--lime">相談</div>
+            <p class="price-card-desc">毎月決まったでのご相談も承っております。マーケティングのご相談にも対応・ことも可能です。</p>
+            <ul class="price-card-items">
+              <li><span class="price-label">月次相談</span><span class="price-value">¥40,000〜</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- フッターアニメーション -->
+    <div class="footer-animation-wrapper">
+      <div class="footer-anim-line"></div>
+      <div class="footer-glitch-text" data-text="Let's have fun making things with NOI !">Let's have fun making things with NOI !</div>
+      <a href="index.html#fv" class="footer-anim-noi">NOI</a>
+      <div class="footer-anim-noise"><img src="assets/images/headder_moise.png" alt=""></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-copy">© 2024 NOI. ALL RIGHTS RESERVED.</div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

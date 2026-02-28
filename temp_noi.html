@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Computed Style Checker</h2>
+  <div id="result"></div>
+  <!-- load the actual index.html in an iframe, then measure it -->
+  <iframe src="index.html" id="testframe" style="width: 1200px; height: 800px; border: 1px solid #ccc;" onload="check()"></iframe>
+  <script>
+    function check() {
+      try {
+        const frame = document.getElementById('testframe');
+        const doc = frame.contentDocument || frame.contentWindow.document;
+        const main = doc.querySelector('.phone-column');
+        if (!main) {
+          document.getElementById('result').innerText = 'Phone column not found!';
+          return;
+        }
+        const rect = main.getBoundingClientRect();
+        const style = frame.contentWindow.getComputedStyle(main);
+        let res = `Phone-column Top: ${rect.top}, Margin-Top: ${style.marginTop}, Transform: ${style.transform}\n`;
+        
+        const fvWrapper = doc.querySelector('.fv-strategy-wrapper');
+        const fvRect = fvWrapper.getBoundingClientRect();
+        res += `FV-Strategy-Wrapper Top: ${fvRect.top}\n`;
+
+        document.getElementById('result').innerText = res;
+        console.log(res);
+      } catch(e) {
+        document.getElementById('result').innerText = 'Error: ' + e;
+      }
+    }
+  </script>
+</body>
+</html>

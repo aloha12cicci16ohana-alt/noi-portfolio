@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOI | Web Design & Creative Strategy</title>
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- JS（最後に読み込み。deferでDOM後に実行） -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- 背景レイヤー -->
+  <div class="scene">
+    <div class="scene-inner">
+      <div class="blob blob-lime-1"></div>
+      <div class="blob blob-lime-2"></div>
+      <div class="blob blob-orange-1"></div>
+      <div class="blob blob-orange-2"></div>
+    </div>
+
+    <div class="noise-overlay">
+      <video src="assets/video/noise.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <!-- 縦書き無限ループテキスト -->
+  <div class="side-text-container left">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+  <div class="side-text-container right">
+    <div class="side-text-scroll">
+      <span>Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+      <span aria-hidden="true">Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI / Web design / Strategy / AI /&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- NOIロゴ -->
+  <a href="index.html#fv" class="logo">NOI</a>
+
+  <!-- ナビゲーションメニュー -->
+  <header class="floating-nav">
+    <nav>
+      <ul>
+        <li><a href="index.html#fv">TOP</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="index.html#service">SERVICE</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-header-bar">
+    <a href="index.html" class="logo">NOI</a>
+    <div class="mobile-header-right">
+      <div class="mobile-menu-text-btn" id="mobileMenuBtn">ME<br>NU</div>
+      <div class="mobile-close-x" id="mobileCloseBtn">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <- POSTリクエストでデータ追加（JSONボディ: {name: ..., comment: ...}） ▼
+  <div class="mobile-fullscreen-menu" id="mobileFullscreenMenu">
+    <div class="menu-bg-circle"></div>
+    <div class="menu-content-inner">
+      <nav class="mobile-nav-links">
+        <ul>
+          <li><a href="index.html">Top</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-sns-links">
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="Instagram"></a>
+        <a href="#" target="_blank" class="sns-icon-placeholder" aria-label="X"></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- メインカラム -->
+  <main class="phone-column">
+
+    <!-- Works Archive Layout -->
+    <section id="works-archive" class="works-archive-section">
+      <div class="works-archive-header">
+        <h2 class="works-title-large">Works</h2>
+        <img src="assets/images/burashi.png" alt="" class="title-decoration-brush" />
+      </div>
+
+      <div class="works-archive-container">
+        <!-- 左側のスティッキーメニュー -->
+        <aside class="works-sidebar">
+          <ul class="works-filter-list">
+            <li><button class="filter-btn active" data-filter="all">ALL</button></li>
+            <li><button class="filter-btn" data-filter="web-design">WEBデザイン</button></li>
+            <li><button class="filter-btn" data-filter="website">WEBサイト</button></li>
+            <li><button class="filter-btn" data-filter="banner">バナー</button></li>
+            <li><button class="filter-btn" data-filter="digital-art">デジタルアート</button></li>
+          </ul>
+        </aside>
+
+        <!-- 右側の作品リスト -->
+        <div class="works-list">
+          
+          <!-- ダミー作品 1~21 -->
+          <a href="work-01.html" class="work-item" data-category="web-design">
+            <div class="work-item-img"><img src="./assets/works/webdesign/life_top.png" alt="Lifehairdesign" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">美容室 Lifehair design LP</h3>
+              <p class="work-item-tags">WEBデザイン</p>
+            </div>
+          </a>
+          <a href="work-02.html" class="work-item" data-category="web-design">
+            <div class="work-item-img"><img src="./assets/works/webdesign/workers_top.png" alt="WORKERS" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">コワーキングスペース WORKERS LP</h3>
+              <p class="work-item-tags">WEBデザイン</p>
+            </div>
+          </a>
+          <a href="work-03.html" class="work-item" data-category="web-design">
+            <div class="work-item-img"><img src="./assets/works/webdesign/cha_top.png" alt="ohana" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">オハナ製茶 コーポレートサイト</h3>
+              <p class="work-item-tags">WEBデザイン</p>
+            </div>
+          </a>
+          <a href="work-04.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/dezacafe_top.png" alt="designcafe" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">DESIGN CAFE</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-05.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/kanemitsu_top.png" alt="kanemitsu" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">うなぎの兼光</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-06.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/AitTOP.png" alt="ait-style" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">Ait-Style</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-07.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/TRAD TOP.png" alt="TRAD ARCHITECT" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">TRAD ARCHITECT</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-08.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/ashi_TOP.png" alt="ashitokarada" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">足とからだの力</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-09.html" class="work-item" data-category="web-design website">
+            <div class="work-item-img"><img src="./assets/works/web/furisupe_top.png" alt="furisupe" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">フリスペ</h3>
+              <p class="work-item-tags">WEBデザイン / WEBサイト</p>
+            </div>
+          </a>
+          <a href="work-10.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/highbarger_squ.jpg" alt="highbarger" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">新バーガー SNS告知 高級ver.</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-11.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/popbarger_squ.jpg" alt="popbarger" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">新バーガー SNS告知 POPver.</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-12.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/ice_o1.jpg" alt="ice1" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">アイスクリーム夏限定フレーバー告知①</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-13.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/ice_02.jpg" alt="ice2" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">アイスクリーム夏限定フレーバー告知②</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-14.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/Instagram post - 29.png" alt="funiture" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">家具イベント告知①</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-15.html" class="work-item" data-category="banner">
+            <div class="work-item-img"><img src="./assets/works/banner/Instagram post - 44.png" alt="funiture" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">家具イベント告知②</h3>
+              <p class="work-item-tags">バナー</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_04.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート①</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_06.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート②</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_08.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート③</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_09.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート④</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_10.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート⑤</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+          <a href="work-16.html" class="work-item" data-category="digital-art">
+            <div class="work-item-img"><img src="./assets/works/desitalart/chum_11.jpg" alt="desitalart" /></div>
+            <div class="work-item-info">
+              <h3 class="work-item-title">デジタルアート⑥</h3>
+              <p class="work-item-tags">デジタルアート</p>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Entrance Animation -->
+      <div class="footer-animation-wrapper">
+        <div class="footer-anim-line"></div>
+        <div class="footer-glitch-text" data-text="Let's have fun making things with NOI !">Let's have fun making things with NOI !</div>
+        <a href="index.html#fv" class="footer-anim-noi">NOI</a>
+        <div class="footer-anim-noise"><img src="assets/images/headder_moise.png" alt=""></div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-copy">© 2024 NOI. ALL RIGHTS RESERVED.</div>
+      </footer>
+    </section>
+  </main>
+
+</body>
+</html>
